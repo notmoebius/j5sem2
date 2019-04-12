@@ -1,7 +1,6 @@
 require 'pry'
 require 'launchy'
 
-Launchy.open("http://stackoverflow.com")
 def check_if_user_gave_input
   abort("Missing arguments for search: type google_searcher looking_for_something\ngoogle_searcher: missing input") if ARGV.empty?
 end
@@ -16,7 +15,6 @@ end
 
 def perform
   check_if_user_gave_input
-  #p get_string_search
   launch_search(get_string_search)
 end
 
