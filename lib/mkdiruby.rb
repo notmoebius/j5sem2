@@ -1,4 +1,3 @@
-require 'pry'
 
 # ne fonctionne uniquement dans le dossier d'exécution.
 def check_if_user_gave_input
@@ -17,13 +16,11 @@ def create_folder(name)
   Dir.mkdir(name)
   Dir.chdir(name)
   Dir.mkdir("lib")
-  # system("mkdir -p #{name}")
-  # system("mkdir -p #{name}/lib")
 end
 
 def create_files
-  #creation du fichier Gemfile
 
+  #creation du fichier Gemfile
   p "...je créé le Gemfile: Gemfile"
   f = File.open("Gemfile", "a")
   f.puts("source 'https://rubygems.org'")
@@ -53,7 +50,7 @@ def create_files
   f3.close
 
   #création  du .gitignore
-
+  p "...je créé le .gitignore"
   gitginore = File.open(".gitignore", "a")
   gitginore.puts ".env"
   gitginore.close
@@ -71,6 +68,7 @@ def launch_tools(folder_work)
   system("rspec --init")
   system("git init")
   system("bundle install")
+  p "Les commandes rspec, git et bundle sont passés"
 end
 
 def perform
