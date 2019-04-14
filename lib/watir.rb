@@ -4,8 +4,10 @@ require 'pry'
 # require 'webdriver'
 # require 'launchy'
 
-browser = Watir::Browser.new(:firefox)
-browser.goto 'google.com'
+browser = Watir::Browser.start('google.com', :firefox)  # fonctionne aussi -ou- ci-dessous
+# browser = Watir::Browser.new(:firefox) 
+# browser.goto 'google.com'
+
 
 search_bar = browser.text_field(class: 'gsfi')
 search_bar.set("how to center a div")
