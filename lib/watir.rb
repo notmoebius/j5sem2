@@ -24,7 +24,7 @@ browser.driver.manage.timeouts.implicit_wait = 3
 #browser.div(class:"rc")
 search_result_divs = browser.divs(class:"rc")
 search_result_urls = browser.cites(class:"a")
-search_result_divs.each { |div| p div.h3.text }
-search_result_urls.each { |url| p div.cite.text}
+search_result_divs.each { | div | p div.h3.text }
+search_result_urls.each { | url | p div.cite.text }
 
 browser.close
